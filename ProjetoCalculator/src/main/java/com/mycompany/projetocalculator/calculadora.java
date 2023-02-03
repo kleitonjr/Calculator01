@@ -46,12 +46,22 @@ public class calculadora extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
 
         tfResult.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         tfResult.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         tfResult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfResultActionPerformed(evt);
+            }
+        });
+        tfResult.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tfResultKeyPressed(evt);
             }
         });
 
@@ -133,6 +143,7 @@ public class calculadora extends javax.swing.JFrame {
         });
 
         btn3.setText("3");
+        btn3.setName("btn3"); // NOI18N
         btn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn3ActionPerformed(evt);
@@ -298,7 +309,7 @@ public class calculadora extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    Scanner sc = New Scanner(System.in);
+//    Scanner sc = New Scanner(System.in);
    
    
     private void btnPercentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPercentActionPerformed
@@ -330,10 +341,14 @@ public class calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-//        digitaNum("8");
-        tfResult.setText(tfResult.getText() + "8");
+        atualizar("8");
     }//GEN-LAST:event_btn8ActionPerformed
 
+    
+    private void atualizar(String conteudo){
+        tfResult.setText(tfResult.getText() + conteudo);
+    }
+    
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
 //        digitaNum("9");
         tfResult.setText(tfResult.getText() + "9");
@@ -451,6 +466,23 @@ public class calculadora extends javax.swing.JFrame {
             tfResult.setText(String.valueOf(num1 * (num2/100.0)));
         }
     }//GEN-LAST:event_btnIgualActionPerformed
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+        
+        tfResult.setText( String.valueOf(evt.getKeyChar()) );
+        
+    }//GEN-LAST:event_formKeyPressed
+
+    private void tfResultKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfResultKeyPressed
+        // TODO add your handling code here:
+        
+        if (evt.getKeyChar() == '3') {
+            btn3ActionPerformed(evt);
+        }
+        
+         tfResult.setText( String.valueOf(evt.getKeyChar()) );
+    }//GEN-LAST:event_tfResultKeyPressed
     
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -460,7 +492,7 @@ public class calculadora extends javax.swing.JFrame {
         });
     }
     
-     sc.close();
+//     sc.close();
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn0;
