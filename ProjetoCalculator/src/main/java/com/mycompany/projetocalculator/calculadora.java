@@ -7,14 +7,17 @@ package com.mycompany.projetocalculator;
  *
  * @author KleitonJr
  */
+
+import java.util.Scanner;
+
 public class calculadora extends javax.swing.JFrame {
 
     public calculadora() {
         initComponents();
     }
-    Double num1, num2;
+    
+    float num1, num2;
     String op;
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -30,7 +33,7 @@ public class calculadora extends javax.swing.JFrame {
         btn5 = new javax.swing.JButton();
         btn6 = new javax.swing.JButton();
         btnMulti = new javax.swing.JButton();
-        btnLimpa = new javax.swing.JButton();
+        btnPercent = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
         btn3 = new javax.swing.JButton();
         btnMenos = new javax.swing.JButton();
@@ -44,7 +47,6 @@ public class calculadora extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        tfResult.setEditable(false);
         tfResult.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         tfResult.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         tfResult.addActionListener(new java.awt.event.ActionListener() {
@@ -116,10 +118,10 @@ public class calculadora extends javax.swing.JFrame {
             }
         });
 
-        btnLimpa.setText("C");
-        btnLimpa.addActionListener(new java.awt.event.ActionListener() {
+        btnPercent.setText("%");
+        btnPercent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpaActionPerformed(evt);
+                btnPercentActionPerformed(evt);
             }
         });
 
@@ -220,7 +222,7 @@ public class calculadora extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnLimpaTudo, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnLimpa, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnPercent, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 10, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btn0, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -244,7 +246,7 @@ public class calculadora extends javax.swing.JFrame {
                     .addComponent(btn4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnMulti, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnLimpa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnPercent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -276,10 +278,10 @@ public class calculadora extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(tfResult, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,101 +298,137 @@ public class calculadora extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLimpaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpaActionPerformed
+    Scanner sc = New Scanner(System.in);
+   
+   
+    private void btnPercentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPercentActionPerformed
+        num1 = Float.parseFloat(tfResult.getText());
         tfResult.setText("");
-    }//GEN-LAST:event_btnLimpaActionPerformed
+        op = "percent";     
+    }//GEN-LAST:event_btnPercentActionPerformed
 
     private void btnMultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiActionPerformed
-        num1 = Double.parseDouble(tfResult.getText());
+        num1 = Float.parseFloat(tfResult.getText());
         tfResult.setText("");
         op = "multi";
     }//GEN-LAST:event_btnMultiActionPerformed
 
     private void btnMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenosActionPerformed
-        num1 = Double.parseDouble(tfResult.getText());
+        num1 = Float.parseFloat(tfResult.getText());
         tfResult.setText("");
         op = "minus";
     }//GEN-LAST:event_btnMenosActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
-        digita("0");        
-//        tfResult.setText(tfResult.getText() + "0");
+//        digitaNum("0");        
+        tfResult.setText(tfResult.getText() + "0");
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
-        digita("7");
-//        tfResult.setText(tfResult.getText() + "7");
+//        digitaNum("7");
+        tfResult.setText(tfResult.getText() + "7");
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-        digita("8");
-//        tfResult.setText(tfResult.getText() + "8");
+//        digitaNum("8");
+        tfResult.setText(tfResult.getText() + "8");
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
-        digita("9");
-//        tfResult.setText(tfResult.getText() + "9");
+//        digitaNum("9");
+        tfResult.setText(tfResult.getText() + "9");
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
-        digita("2");       
-//        tfResult.setText(tfResult.getText() + "2");
+//        digitaNum("2");       
+        tfResult.setText(tfResult.getText() + "2");
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        digita("1");
-//        tfResult.setText(tfResult.getText() + "1");
+//        digitaNum("1");
+        tfResult.setText(tfResult.getText() + "1");
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
-        digita("3");
-//        tfResult.setText(tfResult.getText() + "3");
+//        digitaNum("3");
+        tfResult.setText(tfResult.getText() + "3");
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
-        digita("4");
-//        tfResult.setText(tfResult.getText() + "4");
+//        digitaNum("4");
+        tfResult.setText(tfResult.getText() + "4");
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
-        digita("5");
-//        tfResult.setText(tfResult.getText() + "5");
+//        digitaNum("5");
+        tfResult.setText(tfResult.getText() + "5");
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btnVirgulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVirgulaActionPerformed
-        digita(",");
-//        tfResult.setText(tfResult.getText() + ",");
+//        digitaNum(",");
+        tfResult.setText(tfResult.getText() + ",");
+        
     }//GEN-LAST:event_btnVirgulaActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
-        digita("6");
-//        tfResult.setText(tfResult.getText() + "6");
+//        digitaNum("6");
+        tfResult.setText(tfResult.getText() + "6");
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btnMaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaisActionPerformed
-        num1 = Double.parseDouble(tfResult.getText());
+        num1 = Float.parseFloat(tfResult.getText());
         tfResult.setText("");
         op = "sum";
     }//GEN-LAST:event_btnMaisActionPerformed
 
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
-        num1 = Double.parseDouble(tfResult.getText());
+        num1 = Float.parseFloat(tfResult.getText());
         tfResult.setText("");
         op = "div";
     }//GEN-LAST:event_btnDivActionPerformed
-    private void digita(String caractere){
-        if(tfResult.getText().equals("0,00")){
-            tfResult.setText(caractere);
-        }else{
-            if(caractere.equals(",")&& tfResult.getText().contains(",")){
-                
-            }else{
-                tfResult.setText(tfResult.getText().concat(caractere));
-            }
-        }
-    }
+//    private void digitaNum(String caractere){
+//        if(tfResult.getText().equals("0,00")){
+//            tfResult.setText(caractere);
+//        }else{
+//            if(caractere.equals(",")&& tfResult.getText().contains(",")){
+//                
+//            }else{
+//                tfResult.setText(tfResult.getText().concat(caractere));
+//            }
+//        }
+//    }
     private void tfResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfResultActionPerformed
-        // TODO add your handling code here:
+//       if(tfResult.getText() == "0"){
+//           tfResult.setText(tfResult.getText() + "0");
+//       }else
+//           if(tfResult.getText() == "1"){
+//               tfResult.setText(tfResult.getText() + "1");
+//           }else
+//               if(tfResult.getText() == "2"){
+//               tfResult.setText(tfResult.getText() + "2");
+//           }else
+//                if(tfResult.getText() == "3"){
+//                tfResult.setText(tfResult.getText() + "3");
+//           }else
+//                if(tfResult.getText() == "4"){
+//                tfResult.setText(tfResult.getText() + "4");
+//           }else
+//                if(tfResult.getText() == "5"){
+//                tfResult.setText(tfResult.getText() + "5");
+//                tfResult.setText("");
+//           }else
+//                if(tfResult.getText() == "6"){
+//                tfResult.setText(tfResult.getText() + "6");
+//           }else
+//                if(tfResult.getText() == "7"){
+//                tfResult.setText(tfResult.getText() + "7");
+//            }else
+//                if(tfResult.getText() == "8"){
+//                tfResult.setText(tfResult.getText() + "8");
+//            }else
+//                if(tfResult.getText() == "9"){
+//                tfResult.setText(tfResult.getText() + "9");
+//            }            
     }//GEN-LAST:event_tfResultActionPerformed
 
     private void btnLimpaTudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpaTudoActionPerformed
@@ -399,8 +437,7 @@ public class calculadora extends javax.swing.JFrame {
 
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
         
-        num2 = Double.parseDouble(tfResult.getText());
-        
+        num2 = Float.parseFloat(tfResult.getText());
         if(op == "sum"){
             tfResult.setText(String.valueOf(num1 + num2));
         }else if(op == "minus"){
@@ -409,6 +446,9 @@ public class calculadora extends javax.swing.JFrame {
             tfResult.setText(String.valueOf(num1 * num2));
         }else if(op == "div"){
             tfResult.setText(String.valueOf(num1 / num2));
+        }
+        else if(op == "percent"){
+            tfResult.setText(String.valueOf(num1 * (num2/100.0)));
         }
     }//GEN-LAST:event_btnIgualActionPerformed
     
@@ -419,6 +459,9 @@ public class calculadora extends javax.swing.JFrame {
             }
         });
     }
+    
+     sc.close();
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn0;
     private javax.swing.JButton btn1;
@@ -432,11 +475,11 @@ public class calculadora extends javax.swing.JFrame {
     private javax.swing.JButton btn9;
     private javax.swing.JButton btnDiv;
     private javax.swing.JButton btnIgual;
-    private javax.swing.JButton btnLimpa;
     private javax.swing.JButton btnLimpaTudo;
     private javax.swing.JButton btnMais;
     private javax.swing.JButton btnMenos;
     private javax.swing.JButton btnMulti;
+    private javax.swing.JButton btnPercent;
     private javax.swing.JButton btnVirgula;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
