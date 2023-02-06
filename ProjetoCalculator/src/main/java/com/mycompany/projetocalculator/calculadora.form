@@ -61,6 +61,7 @@
   <SubComponents>
     <Component class="javax.swing.JTextField" name="tfResult">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="1"/>
         </Property>
@@ -121,9 +122,9 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnLimpaTudo" min="-2" pref="95" max="-2" attributes="0"/>
+                              <Component id="btnLimpa" min="-2" pref="95" max="-2" attributes="0"/>
                               <Component id="btnIgual" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                              <Component id="btnPercent" min="-2" pref="95" max="-2" attributes="0"/>
+                              <Component id="btnMaisMenos" min="-2" pref="95" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
                       </Group>
@@ -142,7 +143,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btnLimpaTudo" pref="53" max="32767" attributes="0"/>
+                      <Component id="btnLimpa" pref="53" max="32767" attributes="0"/>
                       <Component id="btn7" alignment="1" max="32767" attributes="0"/>
                       <Component id="btn8" max="32767" attributes="0"/>
                       <Component id="btn9" max="32767" attributes="0"/>
@@ -154,7 +155,7 @@
                       <Component id="btn4" max="32767" attributes="0"/>
                       <Component id="btn6" max="32767" attributes="0"/>
                       <Component id="btnMulti" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnPercent" max="32767" attributes="0"/>
+                      <Component id="btnMaisMenos" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -202,6 +203,7 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn9ActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="btn9KeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnDiv">
@@ -212,12 +214,12 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDivActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnLimpaTudo">
+        <Component class="javax.swing.JButton" name="btnLimpa">
           <Properties>
             <Property name="text" type="java.lang.String" value="AC"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpaTudoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimpaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn4">
@@ -252,12 +254,13 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMultiActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnPercent">
+        <Component class="javax.swing.JButton" name="btnMaisMenos">
           <Properties>
-            <Property name="text" type="java.lang.String" value="%"/>
+            <Property name="text" type="java.lang.String" value="+/-"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPercentActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMaisMenosActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="btnMaisMenosKeyPressed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn2">

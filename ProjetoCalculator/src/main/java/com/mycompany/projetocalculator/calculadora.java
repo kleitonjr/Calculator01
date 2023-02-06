@@ -3,20 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.projetocalculator;
+
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
 /**
  *
  * @author KleitonJr
  */
-
-import java.util.Scanner;
-
 public class calculadora extends javax.swing.JFrame {
 
     public calculadora() {
         initComponents();
     }
     
-    float num1, num2;
+    double num1, num2;
     String op;
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -28,12 +29,12 @@ public class calculadora extends javax.swing.JFrame {
         btn8 = new javax.swing.JButton();
         btn9 = new javax.swing.JButton();
         btnDiv = new javax.swing.JButton();
-        btnLimpaTudo = new javax.swing.JButton();
+        btnLimpa = new javax.swing.JButton();
         btn4 = new javax.swing.JButton();
         btn5 = new javax.swing.JButton();
         btn6 = new javax.swing.JButton();
         btnMulti = new javax.swing.JButton();
-        btnPercent = new javax.swing.JButton();
+        btnMaisMenos = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
         btn3 = new javax.swing.JButton();
         btnMenos = new javax.swing.JButton();
@@ -52,6 +53,7 @@ public class calculadora extends javax.swing.JFrame {
             }
         });
 
+        tfResult.setEditable(false);
         tfResult.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         tfResult.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         tfResult.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +87,11 @@ public class calculadora extends javax.swing.JFrame {
                 btn9ActionPerformed(evt);
             }
         });
+        btn9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btn9KeyPressed(evt);
+            }
+        });
 
         btnDiv.setText("/");
         btnDiv.addActionListener(new java.awt.event.ActionListener() {
@@ -93,10 +100,10 @@ public class calculadora extends javax.swing.JFrame {
             }
         });
 
-        btnLimpaTudo.setText("AC");
-        btnLimpaTudo.addActionListener(new java.awt.event.ActionListener() {
+        btnLimpa.setText("AC");
+        btnLimpa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpaTudoActionPerformed(evt);
+                btnLimpaActionPerformed(evt);
             }
         });
 
@@ -128,10 +135,15 @@ public class calculadora extends javax.swing.JFrame {
             }
         });
 
-        btnPercent.setText("%");
-        btnPercent.addActionListener(new java.awt.event.ActionListener() {
+        btnMaisMenos.setText("+/-");
+        btnMaisMenos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPercentActionPerformed(evt);
+                btnMaisMenosActionPerformed(evt);
+            }
+        });
+        btnMaisMenos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnMaisMenosKeyPressed(evt);
             }
         });
 
@@ -231,9 +243,9 @@ public class calculadora extends javax.swing.JFrame {
                                 .addComponent(btnDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnLimpaTudo, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnLimpa, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnPercent, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnMaisMenos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 10, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btn0, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -246,7 +258,7 @@ public class calculadora extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnLimpaTudo, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
+                    .addComponent(btnLimpa, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
                     .addComponent(btn7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -257,7 +269,7 @@ public class calculadora extends javax.swing.JFrame {
                     .addComponent(btn4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnMulti, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPercent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnMaisMenos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -309,147 +321,203 @@ public class calculadora extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-//    Scanner sc = New Scanner(System.in);
-   
-   
-    private void btnPercentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPercentActionPerformed
-        num1 = Float.parseFloat(tfResult.getText());
-        tfResult.setText("");
-        op = "percent";     
-    }//GEN-LAST:event_btnPercentActionPerformed
+    private void btnMaisMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaisMenosActionPerformed
+        num1 = Double.parseDouble(String.valueOf(tfResult.getText()));
+        num1 = num1 * (-1);
+        tfResult.setText(String.valueOf(num1));
+    }//GEN-LAST:event_btnMaisMenosActionPerformed
 
     private void btnMultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiActionPerformed
-        num1 = Float.parseFloat(tfResult.getText());
-        tfResult.setText("");
+        num1 = Double.parseDouble(tfResult.getText());
+        limpa();
         op = "multi";
     }//GEN-LAST:event_btnMultiActionPerformed
 
     private void btnMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenosActionPerformed
-        num1 = Float.parseFloat(tfResult.getText());
-        tfResult.setText("");
+        num1 = Double.parseDouble(tfResult.getText());
+        limpa();
         op = "minus";
     }//GEN-LAST:event_btnMenosActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
-//        digitaNum("0");        
-        tfResult.setText(tfResult.getText() + "0");
+        digitaNum("0");
+        //tfResult.setText(tfResult.getText() + "0");
+        addKeyListener(new KeyAdapter() {;
+            @Override
+            public void keyPressed(KeyEvent e){
+                int cod = e.getKeyCode();
+                int tecla0 = KeyEvent.VK_0;
+                
+                if(cod == tecla0){
+                     tfResult.setText(tfResult.getText() + "0");
+                }
+            }    
+        });
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
-//        digitaNum("7");
-        tfResult.setText(tfResult.getText() + "7");
+        digitaNum("7");
+        addKeyListener(new KeyAdapter() {;
+            @Override
+            public void keyPressed(KeyEvent e){
+                int cod = e.getKeyCode();
+                int tecla0 = KeyEvent.VK_0;
+                
+                if(cod == tecla0){
+                     tfResult.setText(tfResult.getText() + "7");
+                }
+            }    
+        });
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-        atualizar("8");
+        digitaNum("8");
+        addKeyListener(new KeyAdapter() {;
+            @Override
+            public void keyPressed(KeyEvent e){
+                int cod = e.getKeyCode();
+                int tecla0 = KeyEvent.VK_0;
+                
+                if(cod == tecla0){
+                     tfResult.setText(tfResult.getText() + "8");
+                }
+            }    
+        });
     }//GEN-LAST:event_btn8ActionPerformed
-
-    
-    private void atualizar(String conteudo){
-        tfResult.setText(tfResult.getText() + conteudo);
-    }
-    
+ 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
-//        digitaNum("9");
-        tfResult.setText(tfResult.getText() + "9");
+       digitaNum("9");
+       //tfResult.setText(tfResult.getText() + "9");
+       addKeyListener(new KeyAdapter() {;
+            @Override
+            public void keyPressed(KeyEvent e){
+                int cod = e.getKeyCode();
+                int tecla0 = KeyEvent.VK_0;
+                
+                if(cod == tecla0){
+                     tfResult.setText(tfResult.getText() + "9");
+                }
+            }    
+        });
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
-//        digitaNum("2");       
-        tfResult.setText(tfResult.getText() + "2");
+       digitaNum("2");
+       addKeyListener(new KeyAdapter() {;
+            @Override
+            public void keyPressed(KeyEvent e){
+                int cod = e.getKeyCode();
+                int tecla0 = KeyEvent.VK_0;
+                
+                if(cod == tecla0){
+                     tfResult.setText(tfResult.getText() + "2");
+                }
+            }    
+        });
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-//        digitaNum("1");
-        tfResult.setText(tfResult.getText() + "1");
+       digitaNum("1");
+       addKeyListener(new KeyAdapter() {;
+            @Override
+            public void keyPressed(KeyEvent e){
+                int cod = e.getKeyCode();
+                int tecla0 = KeyEvent.VK_0;
+                
+                if(cod == tecla0){
+                     tfResult.setText(tfResult.getText() + "1");
+                }
+            }    
+        });
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
-//        digitaNum("3");
-        tfResult.setText(tfResult.getText() + "3");
+        digitaNum("3");
+        addKeyListener(new KeyAdapter() {;
+            @Override
+            public void keyPressed(KeyEvent e){
+                int cod = e.getKeyCode();
+                int tecla0 = KeyEvent.VK_0;
+                
+                if(cod == tecla0){
+                     tfResult.setText(tfResult.getText() + "3");
+                }
+            }    
+        });
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
-//        digitaNum("4");
-        tfResult.setText(tfResult.getText() + "4");
+       addKeyListener(new KeyAdapter() {;
+            @Override
+            public void keyPressed(KeyEvent e){
+                int cod = e.getKeyCode();
+                int tecla0 = KeyEvent.VK_0;
+                
+                if(cod == tecla0){
+                     tfResult.setText(tfResult.getText() + "4");
+                }
+            }    
+        });
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
-//        digitaNum("5");
-        tfResult.setText(tfResult.getText() + "5");
+        digitaNum("5");
+       addKeyListener(new KeyAdapter() {;
+            @Override
+            public void keyPressed(KeyEvent e){
+                int cod = e.getKeyCode();
+                int tecla0 = KeyEvent.VK_0;
+                
+                if(cod == tecla0){
+                     tfResult.setText(tfResult.getText() + "5");
+                }
+            }    
+        });
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btnVirgulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVirgulaActionPerformed
-//        digitaNum(",");
-        tfResult.setText(tfResult.getText() + ",");
-        
+        digitaNum(",");
+     //   tfResult.setText(tfResult.getText() + ",");
     }//GEN-LAST:event_btnVirgulaActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
-//        digitaNum("6");
-        tfResult.setText(tfResult.getText() + "6");
+       digitaNum("6");
+        addKeyListener(new KeyAdapter() {;
+            @Override
+            public void keyPressed(KeyEvent e){
+                int cod = e.getKeyCode();
+                int tecla0 = KeyEvent.VK_0;
+                
+                if(cod == tecla0){
+                     tfResult.setText(tfResult.getText() + "6");
+                }
+            }    
+        });
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btnMaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaisActionPerformed
-        num1 = Float.parseFloat(tfResult.getText());
-        tfResult.setText("");
+        num1 = Double.parseDouble(tfResult.getText());
+        limpa();
         op = "sum";
     }//GEN-LAST:event_btnMaisActionPerformed
 
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
-        num1 = Float.parseFloat(tfResult.getText());
-        tfResult.setText("");
+        num1 = Double.parseDouble(tfResult.getText());
+        limpa();
         op = "div";
     }//GEN-LAST:event_btnDivActionPerformed
-//    private void digitaNum(String caractere){
-//        if(tfResult.getText().equals("0,00")){
-//            tfResult.setText(caractere);
-//        }else{
-//            if(caractere.equals(",")&& tfResult.getText().contains(",")){
-//                
-//            }else{
-//                tfResult.setText(tfResult.getText().concat(caractere));
-//            }
-//        }
-//    }
+
     private void tfResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfResultActionPerformed
-//       if(tfResult.getText() == "0"){
-//           tfResult.setText(tfResult.getText() + "0");
-//       }else
-//           if(tfResult.getText() == "1"){
-//               tfResult.setText(tfResult.getText() + "1");
-//           }else
-//               if(tfResult.getText() == "2"){
-//               tfResult.setText(tfResult.getText() + "2");
-//           }else
-//                if(tfResult.getText() == "3"){
-//                tfResult.setText(tfResult.getText() + "3");
-//           }else
-//                if(tfResult.getText() == "4"){
-//                tfResult.setText(tfResult.getText() + "4");
-//           }else
-//                if(tfResult.getText() == "5"){
-//                tfResult.setText(tfResult.getText() + "5");
-//                tfResult.setText("");
-//           }else
-//                if(tfResult.getText() == "6"){
-//                tfResult.setText(tfResult.getText() + "6");
-//           }else
-//                if(tfResult.getText() == "7"){
-//                tfResult.setText(tfResult.getText() + "7");
-//            }else
-//                if(tfResult.getText() == "8"){
-//                tfResult.setText(tfResult.getText() + "8");
-//            }else
-//                if(tfResult.getText() == "9"){
-//                tfResult.setText(tfResult.getText() + "9");
-//            }            
+        requestFocus();
     }//GEN-LAST:event_tfResultActionPerformed
 
-    private void btnLimpaTudoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpaTudoActionPerformed
-        tfResult.setText("");
-    }//GEN-LAST:event_btnLimpaTudoActionPerformed
+    private void btnLimpaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpaActionPerformed
+        limpa();
+    }//GEN-LAST:event_btnLimpaActionPerformed
 
+    private void limpa(){
+        tfResult.setText("");
+    }
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
         
         num2 = Float.parseFloat(tfResult.getText());
@@ -462,27 +530,29 @@ public class calculadora extends javax.swing.JFrame {
         }else if(op == "div"){
             tfResult.setText(String.valueOf(num1 / num2));
         }
-        else if(op == "percent"){
-            tfResult.setText(String.valueOf(num1 * (num2/100.0)));
-        }
+        
     }//GEN-LAST:event_btnIgualActionPerformed
 
+    private void digitaNum(String num){
+        tfResult.setText(tfResult.getText() + num);
+    }
+    
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
-        // TODO add your handling code here:
-        
         tfResult.setText( String.valueOf(evt.getKeyChar()) );
-        
     }//GEN-LAST:event_formKeyPressed
 
     private void tfResultKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfResultKeyPressed
-        // TODO add your handling code here:
-        
-        if (evt.getKeyChar() == '3') {
-            btn3ActionPerformed(evt);
-        }
-        
-         tfResult.setText( String.valueOf(evt.getKeyChar()) );
+
     }//GEN-LAST:event_tfResultKeyPressed
+
+    private void btn9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btn9KeyPressed
+
+        
+    }//GEN-LAST:event_btn9KeyPressed
+
+    private void btnMaisMenosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnMaisMenosKeyPressed
+
+    }//GEN-LAST:event_btnMaisMenosKeyPressed
     
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -491,9 +561,7 @@ public class calculadora extends javax.swing.JFrame {
             }
         });
     }
-    
-//     sc.close();
-    
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn0;
     private javax.swing.JButton btn1;
@@ -507,11 +575,11 @@ public class calculadora extends javax.swing.JFrame {
     private javax.swing.JButton btn9;
     private javax.swing.JButton btnDiv;
     private javax.swing.JButton btnIgual;
-    private javax.swing.JButton btnLimpaTudo;
+    private javax.swing.JButton btnLimpa;
     private javax.swing.JButton btnMais;
+    private javax.swing.JButton btnMaisMenos;
     private javax.swing.JButton btnMenos;
     private javax.swing.JButton btnMulti;
-    private javax.swing.JButton btnPercent;
     private javax.swing.JButton btnVirgula;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
