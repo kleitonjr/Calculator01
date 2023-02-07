@@ -6,14 +6,21 @@ package com.mycompany.projetocalculator;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /**
  *
  * @author KleitonJr
  */
-public class calculadora extends javax.swing.JFrame {
+public class calculadora extends javax.swing.JFrame implements KeyListener{
 
+    //private mainDraw draw;
+    
     public calculadora() {
+        //this.draw=new mainDraw();
+        
+        addKeyListener(this);
+        
         initComponents();
     }
     
@@ -341,158 +348,47 @@ public class calculadora extends javax.swing.JFrame {
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
         digitaNum("0");
-        //tfResult.setText(tfResult.getText() + "0");
-        addKeyListener(new KeyAdapter() {;
-            @Override
-            public void keyPressed(KeyEvent e){
-                int cod = e.getKeyCode();
-                int tecla0 = KeyEvent.VK_0;
-                
-                if(cod == tecla0){
-                     tfResult.setText(tfResult.getText() + "0");
-                }
-            }    
-        });
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
         digitaNum("7");
-        addKeyListener(new KeyAdapter() {;
-            @Override
-            public void keyPressed(KeyEvent e){
-                int cod = e.getKeyCode();
-                int tecla0 = KeyEvent.VK_0;
-                
-                if(cod == tecla0){
-                     tfResult.setText(tfResult.getText() + "7");
-                }
-            }    
-        });
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
         digitaNum("8");
-        addKeyListener(new KeyAdapter() {;
-            @Override
-            public void keyPressed(KeyEvent e){
-                int cod = e.getKeyCode();
-                int tecla0 = KeyEvent.VK_0;
-                
-                if(cod == tecla0){
-                     tfResult.setText(tfResult.getText() + "8");
-                }
-            }    
-        });
     }//GEN-LAST:event_btn8ActionPerformed
  
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
        digitaNum("9");
-       //tfResult.setText(tfResult.getText() + "9");
-       addKeyListener(new KeyAdapter() {;
-            @Override
-            public void keyPressed(KeyEvent e){
-                int cod = e.getKeyCode();
-                int tecla0 = KeyEvent.VK_0;
-                
-                if(cod == tecla0){
-                     tfResult.setText(tfResult.getText() + "9");
-                }
-            }    
-        });
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
        digitaNum("2");
-       addKeyListener(new KeyAdapter() {;
-            @Override
-            public void keyPressed(KeyEvent e){
-                int cod = e.getKeyCode();
-                int tecla0 = KeyEvent.VK_0;
-                
-                if(cod == tecla0){
-                     tfResult.setText(tfResult.getText() + "2");
-                }
-            }    
-        });
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
        digitaNum("1");
-       addKeyListener(new KeyAdapter() {;
-            @Override
-            public void keyPressed(KeyEvent e){
-                int cod = e.getKeyCode();
-                int tecla0 = KeyEvent.VK_0;
-                
-                if(cod == tecla0){
-                     tfResult.setText(tfResult.getText() + "1");
-                }
-            }    
-        });
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
         digitaNum("3");
-        addKeyListener(new KeyAdapter() {;
-            @Override
-            public void keyPressed(KeyEvent e){
-                int cod = e.getKeyCode();
-                int tecla0 = KeyEvent.VK_0;
-                
-                if(cod == tecla0){
-                     tfResult.setText(tfResult.getText() + "3");
-                }
-            }    
-        });
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
-       addKeyListener(new KeyAdapter() {;
-            @Override
-            public void keyPressed(KeyEvent e){
-                int cod = e.getKeyCode();
-                int tecla0 = KeyEvent.VK_0;
-                
-                if(cod == tecla0){
-                     tfResult.setText(tfResult.getText() + "4");
-                }
-            }    
-        });
+        digitaNum("4");
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
         digitaNum("5");
-       addKeyListener(new KeyAdapter() {;
-            @Override
-            public void keyPressed(KeyEvent e){
-                int cod = e.getKeyCode();
-                int tecla0 = KeyEvent.VK_0;
-                
-                if(cod == tecla0){
-                     tfResult.setText(tfResult.getText() + "5");
-                }
-            }    
-        });
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btnVirgulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVirgulaActionPerformed
         digitaNum(",");
-     //   tfResult.setText(tfResult.getText() + ",");
     }//GEN-LAST:event_btnVirgulaActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
-       digitaNum("6");
-        addKeyListener(new KeyAdapter() {;
-            @Override
-            public void keyPressed(KeyEvent e){
-                int cod = e.getKeyCode();
-                int tecla0 = KeyEvent.VK_0;
-                
-                if(cod == tecla0){
-                     tfResult.setText(tfResult.getText() + "6");
-                }
-            }    
-        });
+        digitaNum("6");
+        
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btnMaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaisActionPerformed
@@ -518,6 +414,11 @@ public class calculadora extends javax.swing.JFrame {
     private void limpa(){
         tfResult.setText("");
     }
+    
+    private void digitaNum(String num){
+        tfResult.setText(tfResult.getText() + num);
+    }
+    
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
         
         num2 = Float.parseFloat(tfResult.getText());
@@ -532,10 +433,31 @@ public class calculadora extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_btnIgualActionPerformed
+   
+    @Override
+    public void keyReleased(KeyEvent e) {
+        System.out.println("keyReleased");
 
-    private void digitaNum(String num){
-        tfResult.setText(tfResult.getText() + num);
     }
+    @Override
+     public void keyPressed(KeyEvent e) {
+         System.out.println("keyPressed");
+    }
+     @Override
+      public void keyTyped(KeyEvent e) {
+        System.out.println("keyTyped");
+    }
+    
+    
+//    @Override
+//    public void keyPressed(KeyEvent e){
+//        int cod = e.getKeyCode();
+//        int tecla0 = KeyEvent.VK_0;
+//
+//        if(cod == tecla0){
+//            tfResult.setText(tfResult.getText()+  digitaNum("0"));
+//        }
+//    }
     
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         tfResult.setText( String.valueOf(evt.getKeyChar()) );
@@ -553,7 +475,7 @@ public class calculadora extends javax.swing.JFrame {
     private void btnMaisMenosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnMaisMenosKeyPressed
 
     }//GEN-LAST:event_btnMaisMenosKeyPressed
-    
+ 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
