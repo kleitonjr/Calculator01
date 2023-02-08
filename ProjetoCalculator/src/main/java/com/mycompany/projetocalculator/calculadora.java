@@ -3,11 +3,27 @@ package com.mycompany.projetocalculator;
 import static com.sun.java.accessibility.util.AWTEventMonitor.addKeyListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+<<<<<<< HEAD
 import java.text.DecimalFormat;
 
 public class calculadora extends javax.swing.JFrame {
+=======
+import java.awt.event.KeyListener;
 
+/**
+ *
+ * @author KleitonJr
+ */
+public class calculadora extends javax.swing.JFrame implements KeyListener{
+>>>>>>> 9c87d75a9ee1f2c4e35c145b940a2570d4e8c37c
+
+    //private mainDraw draw;
+    
     public calculadora() {
+        //this.draw=new mainDraw();
+        
+        addKeyListener(this);
+        
         initComponents();
     }
 
@@ -381,7 +397,12 @@ public class calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVirgulaActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
+<<<<<<< HEAD
        digitaNum("6");
+=======
+        digitaNum("6");
+        
+>>>>>>> 9c87d75a9ee1f2c4e35c145b940a2570d4e8c37c
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btnMaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaisActionPerformed
@@ -403,12 +424,63 @@ public class calculadora extends javax.swing.JFrame {
     private void btnLimpaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpaActionPerformed
         limpa();
     }//GEN-LAST:event_btnLimpaActionPerformed
+<<<<<<< HEAD
     private void digitaNum(String num){
         tfResult.setText(tfResult.getText() + num);
     }
     private void limpa(){
         tfResult.setText("");
     }
+=======
+
+    private void limpa(){
+        tfResult.setText("");
+    }
+    
+    private void digitaNum(String num){
+        tfResult.setText(tfResult.getText() + num);
+    }
+    
+    private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
+        
+        num2 = Float.parseFloat(tfResult.getText());
+        if(op == "sum"){
+            tfResult.setText(String.valueOf(num1 + num2));
+        }else if(op == "minus"){
+            tfResult.setText(String.valueOf(num1 - num2));
+        }else if(op == "multi"){
+            tfResult.setText(String.valueOf(num1 * num2));
+        }else if(op == "div"){
+            tfResult.setText(String.valueOf(num1 / num2));
+        }
+        
+    }//GEN-LAST:event_btnIgualActionPerformed
+   
+    @Override
+    public void keyReleased(KeyEvent e) {
+        System.out.println("keyReleased");
+
+    }
+    @Override
+     public void keyPressed(KeyEvent e) {
+         System.out.println("keyPressed");
+    }
+     @Override
+      public void keyTyped(KeyEvent e) {
+        System.out.println("keyTyped");
+    }
+    
+    
+//    @Override
+//    public void keyPressed(KeyEvent e){
+//        int cod = e.getKeyCode();
+//        int tecla0 = KeyEvent.VK_0;
+//
+//        if(cod == tecla0){
+//            tfResult.setText(tfResult.getText()+  digitaNum("0"));
+//        }
+//    }
+>>>>>>> 9c87d75a9ee1f2c4e35c145b940a2570d4e8c37c
     
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
         
@@ -477,6 +549,7 @@ public class calculadora extends javax.swing.JFrame {
     private void btnMaisMenosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnMaisMenosKeyPressed
 
     }//GEN-LAST:event_btnMaisMenosKeyPressed
+<<<<<<< HEAD
 
     private void btnLimpaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLimpaKeyPressed
 //        if(evt.getKeyCode() == KeyEvent.VK_ESCAPE){
@@ -500,6 +573,9 @@ public class calculadora extends javax.swing.JFrame {
 
     });
     
+=======
+ 
+>>>>>>> 9c87d75a9ee1f2c4e35c145b940a2570d4e8c37c
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
