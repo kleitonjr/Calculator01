@@ -1,8 +1,9 @@
 package com.mycompany.projetocalculator;
 
 import exception.ArithmeticException;
+import java.awt.event.KeyEvent;
 
-public class calculadora extends javax.swing.JFrame {
+public class calculadora extends javax.swing.JFrame{
     public calculadora() {
      
         initComponents();
@@ -52,13 +53,9 @@ public class calculadora extends javax.swing.JFrame {
                 tfResultActionPerformed(evt);
             }
         });
-        tfResult.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                tfResultKeyPressed(evt);
-            }
-        });
 
         btn7.setText("7");
+        btn7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn7ActionPerformed(evt);
@@ -79,11 +76,6 @@ public class calculadora extends javax.swing.JFrame {
                 btn9ActionPerformed(evt);
             }
         });
-        btn9.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btn9KeyPressed(evt);
-            }
-        });
 
         btnDiv.setText("/");
         btnDiv.addActionListener(new java.awt.event.ActionListener() {
@@ -96,11 +88,6 @@ public class calculadora extends javax.swing.JFrame {
         btnLimpa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimpaActionPerformed(evt);
-            }
-        });
-        btnLimpa.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnLimpaKeyPressed(evt);
             }
         });
 
@@ -136,11 +123,6 @@ public class calculadora extends javax.swing.JFrame {
         btnMaisMenos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMaisMenosActionPerformed(evt);
-            }
-        });
-        btnMaisMenos.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnMaisMenosKeyPressed(evt);
             }
         });
 
@@ -179,6 +161,11 @@ public class calculadora extends javax.swing.JFrame {
                 btn0ActionPerformed(evt);
             }
         });
+        btn0.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btn0KeyPressed(evt);
+            }
+        });
 
         btnMais.setText("+");
         btnMais.addActionListener(new java.awt.event.ActionListener() {
@@ -211,31 +198,31 @@ public class calculadora extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
+                                .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btn7, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                                     .addComponent(btn4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btn8, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                                    .addComponent(btn8, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                                     .addComponent(btn5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(6, 6, 6)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(btn6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(btnMulti, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                    .addComponent(btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn3, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(btnMenos, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(btnMais, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -243,7 +230,7 @@ public class calculadora extends javax.swing.JFrame {
                             .addComponent(btnLimpa, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnMaisMenos, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 10, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btn0, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -297,7 +284,7 @@ public class calculadora extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(tfResult, javax.swing.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)))
+                    .addComponent(tfResult, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -319,7 +306,7 @@ public class calculadora extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMaisMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaisMenosActionPerformed
-        num1 = Double.parseDouble(String.valueOf(tfResult.getText()));
+        num1 = Double.parseDouble(tfResult.getText());
         num1 = num1 * (-1);
         tfResult.setText(String.valueOf(num1));
     }//GEN-LAST:event_btnMaisMenosActionPerformed
@@ -336,12 +323,9 @@ public class calculadora extends javax.swing.JFrame {
         op = "minus";
     }//GEN-LAST:event_btnMenosActionPerformed
 
-    private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
-        digitaNum("0");
-    }//GEN-LAST:event_btn0ActionPerformed
-
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
         digitaNum("7");
+        
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
@@ -430,81 +414,24 @@ catch(NullPointerException e2){
         
     }//GEN-LAST:event_btnIgualActionPerformed
 
-//    public KeyListener getKeyListener(){
-//        KeyListener keyList = new KeyListener() {
-//            @Override
-//            public void keyTyped(KeyEvent e) {
-//                if(e.getKeyCode() == KeyEvent.VK_0){
-//                    digitaNum("0");
-//                    //tfResult.setText(tfResult.getText() + "0");
-//                }
-//              
-//            }
-//           
-//            @Override
-//            public void keyPressed(KeyEvent e) {
-//                if(e.getKeyCode() == KeyEvent.VK_0){
-//                      digitaNum("0");
-//                    tfResult.setText(tfResult.getText() + "0");
-//                }                            
-//            }
-//
-//            @Override
-//            public void keyReleased(KeyEvent e) {
-//                if(e.getKeyCode() == KeyEvent.VK_0){
-//                    digitaNum("0");
-//                    tfResult.setText(tfResult.getText() + "0");
-//                }
-//            }
-//        };
-//        return keyList;  
-//    }
-  
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
-        tfResult.setText( String.valueOf(evt.getKeyChar()) );
+
     }//GEN-LAST:event_formKeyPressed
 
-    private void tfResultKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfResultKeyPressed
 
-    }//GEN-LAST:event_tfResultKeyPressed
+    private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
+        digitaNum("0");
+    }//GEN-LAST:event_btn0ActionPerformed
 
-    private void btn9KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btn9KeyPressed
+    private void btn0KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btn0KeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_0){
+            digitaNum("0");
+        }
+    }//GEN-LAST:event_btn0KeyPressed
 
-    }//GEN-LAST:event_btn9KeyPressed
-
-    private void btnMaisMenosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnMaisMenosKeyPressed
-
-    }//GEN-LAST:event_btnMaisMenosKeyPressed
-
-
-    private void btnLimpaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLimpaKeyPressed
-//        if(evt.getKeyCode() == KeyEvent.VK_ESCAPE){
-//            this.dispose();
-//        }
-    }//GEN-LAST:event_btnLimpaKeyPressed
-    
-    
-    
-//        calculadora(new KeyAdapter(){
-//            @Override
-//            public void keyReleased(KeyEvent e) {
-//               int cod = e.getKeyCode();
-//                int tecla = KeyEvent.VK_0;
-//                if(cod == tecla){
-//                    System.out.print("keyReleased");
-//                    
-//                }
-//            }
-//        
-//
-//    });
-    
     public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new calculadora().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new calculadora().setVisible(true);
         });
     }
    
@@ -532,18 +459,4 @@ catch(NullPointerException e2){
     private javax.swing.JTextField tfResult;
     // End of variables declaration//GEN-END:variables
 
-//    @Override
-//    public void keyTyped(KeyEvent e) {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
-//
-//    @Override
-//    public void keyPressed(KeyEvent e) {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
-//
-//    @Override
-//    public void keyReleased(KeyEvent e) {
-//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-//    }
 }
